@@ -443,6 +443,7 @@
   .footer-bottom { flex-direction: column; gap: 10px; padding: 16px 20px; text-align: center; }
   .ft-badges { justify-content: center; }
   .btn-teklif { display: none; }
+  .mobile-search { display: block; }    
 }
   </style>
 </head>
@@ -548,7 +549,22 @@
       </button>
     </div>
   </section>
-
+  <div class="mobile-search" style="display:none; background:var(--navy); padding:0 20px 28px;">
+  <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:16px;">
+    <div style="font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px;">Araç Seçimi ile Parça Bul</div>
+    <select style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:11px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; margin-bottom:10px; appearance:none;">
+      <option value="">Araç Markası Seçin…</option>
+      <option>Volkswagen</option><option>Ford</option><option>Renault</option>
+      <option>Toyota</option><option>Fiat</option><option>BMW</option>
+      <option>Mercedes</option><option>Opel</option><option>Peugeot</option>
+      <option>Hyundai</option><option>Kia</option><option>Honda</option>
+    </select>
+    <input type="text" placeholder="Parça adı veya OEM kodu…" style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:11px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; margin-bottom:10px; outline:none;">
+    <button onclick="window.location.href='#iletisim'" style="width:100%; background:var(--gold); color:var(--navy); border:none; border-radius:8px; padding:13px; font-size:14px; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; justify-content:center; gap:8px;">
+      <i class="ti ti-search"></i> Parça Bul
+    </button>
+  </div>
+</div>
   <!-- ── MARQUEE ── -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
