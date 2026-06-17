@@ -1,1 +1,0 @@
-# cukurova-otomotiv
