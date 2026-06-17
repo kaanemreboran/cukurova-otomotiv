@@ -29,53 +29,57 @@
 
     /* NAV */
     .main-nav { background:var(--white); border-bottom:1.5px solid var(--g100); padding:0 48px; height:64px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:200; }
-    .logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
     .logo-name { font-size:14px; font-weight:800; color:var(--navy); letter-spacing:0.04em; line-height:1.1; }
     .logo-name span { font-size:10px; font-weight:400; color:var(--g400); display:block; letter-spacing:0.1em; text-transform:uppercase; }
-    .nav-links { display:flex; }
-    .nav-links a { font-size:13px; color:var(--g600); font-weight:500; text-decoration:none; padding:0 15px; height:64px; display:flex; align-items:center; border-bottom:2.5px solid transparent; transition:color 0.15s,border-color 0.15s; }
-    .nav-links a:hover { color:var(--navy); border-bottom-color:var(--blue); }
-    .nav-actions { display:flex; align-items:center; gap:10px; }
+
+    /* NAV SEARCH */
+    .nav-search { flex:1; max-width:480px; margin:0 24px; display:flex; align-items:center; gap:0; }
+    .nav-search-inner { display:flex; width:100%; border:1.5px solid var(--g200); border-radius:8px; overflow:hidden; transition:border-color 0.15s; }
+    .nav-search-inner:focus-within { border-color:var(--blue); }
+    .nav-search select { border:none; border-right:1.5px solid var(--g200); padding:0 12px; font-size:12px; color:var(--g600); font-family:'Inter',sans-serif; background:var(--g50); outline:none; cursor:pointer; min-width:130px; }
+    .nav-search input { flex:1; border:none; padding:0 14px; font-size:13px; color:var(--g900); font-family:'Inter',sans-serif; background:var(--white); outline:none; }
+    .nav-search-btn { background:var(--blue); color:var(--white); border:none; padding:0 18px; font-size:13px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; font-family:'Inter',sans-serif; transition:background 0.15s; white-space:nowrap; }
+    .nav-search-btn:hover { background:var(--blue2); }
+
+    .nav-actions { display:flex; align-items:center; gap:10px; flex-shrink:0; }
     .nav-phone { font-size:13px; font-weight:700; color:var(--navy); text-decoration:none; display:flex; align-items:center; gap:6px; }
     .nav-phone i { color:var(--blue); font-size:17px; }
-    .btn-wa { background:#25D366; color:var(--white); border:none; border-radius:7px; padding:8px 15px; font-size:12px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; text-decoration:none; font-family:'Inter',sans-serif; transition:background 0.15s; }
+    .btn-wa { background:#25D366; color:var(--white); border:none; border-radius:7px; padding:8px 15px; font-size:12px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; text-decoration:none; font-family:'Inter',sans-serif; transition:background 0.15s; white-space:nowrap; }
     .btn-wa:hover { background:#1EA852; }
-    .btn-teklif { background:var(--blue); color:var(--white); border:none; border-radius:7px; padding:8px 17px; font-size:12px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:6px; text-decoration:none; font-family:'Inter',sans-serif; transition:background 0.15s; }
-    .btn-teklif:hover { background:var(--blue2); }
 
     /* HERO */
-    .hero { background:var(--navy); display:grid; grid-template-columns:1fr 420px; min-height:380px; align-items:center; position:relative; overflow:hidden; }
+    .hero { background:var(--navy); padding:52px 48px 48px; position:relative; overflow:hidden; }
     .hero-glow { position:absolute; bottom:-80px; left:-80px; width:320px; height:320px; background:radial-gradient(circle,rgba(21,88,168,0.4) 0%,transparent 70%); pointer-events:none; }
-    .hero-left { padding:56px 48px; }
-    .hero-eyebrow { display:inline-flex; align-items:center; gap:7px; background:rgba(245,196,0,0.12); border:1px solid rgba(245,196,0,0.22); border-radius:4px; padding:4px 12px; font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:20px; }
-    .hero h1 { font-size:44px; font-weight:900; color:var(--white); line-height:1.05; letter-spacing:-0.035em; margin-bottom:16px; }
+    .hero-glow2 { position:absolute; top:-60px; right:200px; width:240px; height:240px; background:radial-gradient(circle,rgba(245,196,0,0.06) 0%,transparent 70%); pointer-events:none; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:7px; background:rgba(245,196,0,0.12); border:1px solid rgba(245,196,0,0.22); border-radius:4px; padding:4px 12px; font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px; }
+    .hero h1 { font-size:42px; font-weight:900; color:var(--white); line-height:1.05; letter-spacing:-0.035em; margin-bottom:12px; max-width:620px; }
     .hero h1 .accent { color:var(--gold); }
-    .hero-desc { font-size:15px; color:rgba(255,255,255,0.52); line-height:1.75; max-width:400px; margin-bottom:30px; }
-    .hero-btns { display:flex; gap:10px; flex-wrap:wrap; }
+    .hero-desc { font-size:15px; color:rgba(255,255,255,0.52); line-height:1.75; max-width:500px; margin-bottom:28px; }
+    .hero-btns { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
     .btn-hero-main { background:var(--gold); color:var(--navy); padding:13px 26px; border-radius:8px; font-size:14px; font-weight:800; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:background 0.15s,transform 0.15s; }
     .btn-hero-main:hover { background:var(--gold2); transform:translateY(-1px); }
-    .btn-hero-sec { border:1.5px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); background:transparent; padding:13px 22px; border-radius:8px; font-size:14px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:border-color 0.15s,transform 0.15s; }
-    .btn-hero-sec:hover { border-color:rgba(255,255,255,0.5); transform:translateY(-1px); }
-    .hero-stats { display:flex; gap:0; border-top:1px solid rgba(255,255,255,0.07); margin-top:40px; }
-    .hstat { flex:1; padding:20px 0; text-align:center; }
-    .hstat:not(:last-child) { border-right:1px solid rgba(255,255,255,0.07); }
+    .btn-hero-sec { border:1.5px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); background:transparent; padding:13px 22px; border-radius:8px; font-size:14px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:border-color 0.15s; }
+    .btn-hero-sec:hover { border-color:rgba(255,255,255,0.5); }
+
+    /* HERO STATS */
+    .hero-stats { display:flex; gap:0; border-top:1px solid rgba(255,255,255,0.07); padding-top:28px; }
+    .hstat { padding-right:36px; margin-right:36px; border-right:1px solid rgba(255,255,255,0.07); }
+    .hstat:last-child { border-right:none; }
     .hstat-n { font-size:22px; font-weight:800; color:var(--white); letter-spacing:-0.02em; }
-    .hstat-l { font-size:11px; color:rgba(255,255,255,0.35); margin-top:3px; }
+    .hstat-l { font-size:11px; color:rgba(255,255,255,0.35); margin-top:2px; }
+    .hstat-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(245,196,0,0.12); border:1px solid rgba(245,196,0,0.2); border-radius:6px; padding:8px 16px; font-size:12px; font-weight:700; color:var(--gold); }
 
-    /* HERO RIGHT */
-    .hero-right { background:rgba(255,255,255,0.04); border-left:1px solid rgba(255,255,255,0.07); height:100%; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; }
-    .vf-label { font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; display:flex; align-items:center; gap:8px; }
-    .vf-label::after { content:''; flex:1; height:1px; background:rgba(245,196,0,0.2); }
-    .vf-field { margin-bottom:13px; }
-    .vf-field label { display:block; font-size:11px; font-weight:500; color:rgba(255,255,255,0.4); margin-bottom:5px; text-transform:uppercase; letter-spacing:0.04em; }
-    .vf-field select, .vf-field input { width:100%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:7px; padding:10px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; outline:none; appearance:none; transition:border-color 0.2s; }
-    .vf-field select:focus, .vf-field input:focus { border-color:rgba(245,196,0,0.5); }
-    .vf-field select option { background:var(--navy2); color:var(--white); }
-    .btn-vf { width:100%; margin-top:18px; background:var(--gold); color:var(--navy); border:none; border-radius:8px; padding:13px; font-size:14px; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; justify-content:center; gap:8px; transition:background 0.15s; }
-    .btn-vf:hover { background:var(--gold2); }
-
-    /* MOBILE SEARCH - varsayılan gizli */
-    .mobile-search { display:none; }
+    /* SEARCH BAR HERO */
+    .hero-search { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:20px 24px; margin-bottom:28px; }
+    .hero-search-label { font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px; }
+    .hero-search-fields { display:grid; grid-template-columns:1fr 1fr 1fr 1fr auto; gap:10px; align-items:end; }
+    .hsf label { display:block; font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:5px; font-weight:500; text-transform:uppercase; letter-spacing:0.04em; }
+    .hsf select, .hsf input { width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:10px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; outline:none; appearance:none; -webkit-appearance:none; transition:border-color 0.2s; }
+    .hsf select:focus, .hsf input:focus { border-color:rgba(245,196,0,0.5); }
+    .hsf select option { background:var(--navy2); color:var(--white); }
+    .btn-hsf { background:var(--gold); color:var(--navy); border:none; border-radius:8px; padding:10px 22px; font-size:14px; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; gap:7px; white-space:nowrap; transition:background 0.15s; height:42px; }
+    .btn-hsf:hover { background:var(--gold2); }
 
     /* MARQUEE */
     .marquee-wrap { background:var(--g50); border-top:1px solid var(--g100); border-bottom:1px solid var(--g100); padding:13px 0; overflow:hidden; white-space:nowrap; }
@@ -93,20 +97,22 @@
     .see-all { font-size:12px; font-weight:600; color:var(--blue); text-decoration:none; display:flex; align-items:center; gap:4px; white-space:nowrap; }
     .see-all:hover { color:var(--navy); }
 
-    /* CATEGORIES */
-    .cat-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
-    .cat-card { border:1.5px solid var(--g100); border-radius:10px; padding:20px 16px; text-decoration:none; background:var(--white); position:relative; overflow:hidden; transition:transform 0.18s,border-color 0.18s; }
-    .cat-card::before { content:''; position:absolute; inset:0; background:var(--navy); opacity:0; transition:opacity 0.2s; }
-    .cat-card:hover { transform:translateY(-2px); border-color:var(--navy); }
-    .cat-card:hover::before { opacity:1; }
-    .cat-card:hover .cat-icon-wrap { background:rgba(245,196,0,0.15); color:var(--gold); }
-    .cat-card:hover .cat-name { color:var(--white); }
-    .cat-card:hover .cat-sub { color:rgba(255,255,255,0.42); }
-    .cat-card:hover .cat-arrow { color:rgba(255,255,255,0.38); }
-    .cat-icon-wrap { width:42px; height:42px; border-radius:9px; background:var(--g50); display:flex; align-items:center; justify-content:center; font-size:20px; color:var(--navy); margin-bottom:14px; transition:all 0.2s; position:relative; z-index:1; }
-    .cat-name { font-size:13px; font-weight:700; color:var(--g900); margin-bottom:5px; transition:color 0.2s; position:relative; z-index:1; }
-    .cat-sub { font-size:11px; color:var(--g400); line-height:1.5; transition:color 0.2s; position:relative; z-index:1; }
-    .cat-arrow { position:absolute; bottom:14px; right:14px; z-index:1; font-size:14px; color:transparent; transition:color 0.2s; }
+    /* CATEGORY CARDS */
+    .cat-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+    .cat-card { border:1.5px solid var(--g100); border-radius:12px; background:var(--white); overflow:hidden; text-decoration:none; transition:transform 0.18s,border-color 0.18s,box-shadow 0.18s; display:flex; flex-direction:column; }
+    .cat-card:hover { transform:translateY(-3px); border-color:var(--blue); box-shadow:0 8px 24px rgba(21,88,168,0.12); }
+    .cat-img { width:100%; height:140px; object-fit:cover; background:var(--g50); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .cat-img img { width:100%; height:100%; object-fit:cover; }
+    .cat-img-placeholder { width:100%; height:140px; background:linear-gradient(135deg,var(--g50) 0%,var(--g100) 100%); display:flex; align-items:center; justify-content:center; }
+    .cat-img-placeholder i { font-size:48px; color:var(--blue); opacity:0.4; }
+    .cat-body { padding:16px; flex:1; display:flex; flex-direction:column; }
+    .cat-name { font-size:14px; font-weight:800; color:var(--g900); margin-bottom:10px; }
+    .cat-subs { list-style:none; margin-bottom:12px; flex:1; }
+    .cat-subs li { font-size:12px; color:var(--g600); padding:3px 0; display:flex; align-items:center; gap:6px; border-bottom:1px solid var(--g100); }
+    .cat-subs li:last-child { border-bottom:none; }
+    .cat-subs li::before { content:''; width:4px; height:4px; background:var(--blue); border-radius:50%; flex-shrink:0; }
+    .cat-wa-btn { display:flex; align-items:center; justify-content:center; gap:6px; background:var(--navy); color:var(--white); border:none; border-radius:7px; padding:9px 12px; font-size:12px; font-weight:700; cursor:pointer; text-decoration:none; font-family:'Inter',sans-serif; transition:background 0.15s; margin-top:auto; }
+    .cat-wa-btn:hover { background:#25D366; }
 
     /* BRANDS */
     .brands-label { font-size:11px; font-weight:600; color:var(--g400); text-transform:uppercase; letter-spacing:0.1em; text-align:center; margin-bottom:22px; }
@@ -131,30 +137,22 @@
     .ts-title { font-size:14px; font-weight:700; color:var(--white); margin-bottom:6px; }
     .ts-text { font-size:12px; color:rgba(255,255,255,0.42); line-height:1.65; }
 
-    /* CONTACT / FORM */
-    .contact-inner { display:grid; grid-template-columns:1fr 1.1fr; gap:52px; align-items:start; }
-    .contact-left h2 { font-size:28px; font-weight:800; color:var(--g900); letter-spacing:-0.025em; line-height:1.2; margin-bottom:10px; }
-    .contact-left p { font-size:13px; color:var(--g600); line-height:1.7; margin-bottom:26px; }
-    .info-rows { display:flex; flex-direction:column; gap:13px; }
-    .info-row { display:flex; align-items:center; gap:12px; }
-    .info-icon { width:36px; height:36px; border-radius:8px; background:rgba(21,88,168,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .info-icon i { font-size:16px; color:var(--blue); }
-    .info-label { font-size:11px; color:var(--g400); display:block; margin-bottom:1px; }
-    .info-val { font-size:13px; font-weight:600; color:var(--g900); }
-    .form-box { background:var(--white); border:1.5px solid var(--g200); border-radius:12px; padding:30px; }
-    .form-box h3 { font-size:15px; font-weight:700; color:var(--g900); margin-bottom:4px; }
-    .form-box .form-desc { font-size:12px; color:var(--g400); margin-bottom:22px; }
-    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:11px; }
-    .fg { display:flex; flex-direction:column; gap:4px; }
-    .fg.full { grid-column:1/-1; }
-    .fg label { font-size:11px; font-weight:600; color:var(--g600); }
-    .fg input, .fg select, .fg textarea { border:1.5px solid var(--g200); border-radius:7px; padding:9px 12px; font-size:13px; color:var(--g900); font-family:'Inter',sans-serif; background:var(--g50); outline:none; transition:border-color 0.15s; resize:none; }
-    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color:var(--blue); background:var(--white); }
-    .form-btns { display:flex; gap:9px; margin-top:14px; }
-    .fbtn-main { flex:1; background:var(--navy); color:var(--white); border:none; border-radius:7px; padding:12px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; justify-content:center; gap:7px; transition:background 0.15s; }
-    .fbtn-main:hover { background:var(--blue); }
-    .fbtn-wa { background:#25D366; color:var(--white); border:none; border-radius:7px; padding:12px 16px; font-size:13px; font-weight:700; cursor:pointer; font-family:'Inter',sans-serif; display:flex; align-items:center; justify-content:center; gap:7px; transition:background 0.15s; }
-    .fbtn-wa:hover { background:#1EA852; }
+    /* CONTACT */
+    .contact-simple { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:32px; }
+    .contact-card { background:var(--white); border:1.5px solid var(--g200); border-radius:12px; padding:28px 24px; text-align:center; }
+    .contact-card-icon { width:48px; height:48px; border-radius:12px; background:rgba(21,88,168,0.08); display:flex; align-items:center; justify-content:center; margin:0 auto 14px; }
+    .contact-card-icon i { font-size:22px; color:var(--blue); }
+    .contact-card-title { font-size:12px; font-weight:700; color:var(--g400); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px; }
+    .contact-card-val { font-size:15px; font-weight:700; color:var(--g900); text-decoration:none; display:block; margin-bottom:14px; }
+    .contact-card-btn { display:inline-flex; align-items:center; gap:6px; background:var(--navy); color:var(--white); border:none; border-radius:7px; padding:9px 18px; font-size:12px; font-weight:700; cursor:pointer; text-decoration:none; font-family:'Inter',sans-serif; transition:background 0.15s; }
+    .contact-card-btn:hover { background:var(--blue); }
+    .contact-card-btn.wa { background:#25D366; }
+    .contact-card-btn.wa:hover { background:#1EA852; }
+    .contact-info-row { display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid var(--g100); font-size:13px; color:var(--g600); }
+    .contact-info-row:last-child { border-bottom:none; }
+    .contact-info-row i { color:var(--blue); font-size:16px; width:20px; }
+    .contact-info-row a { color:var(--g600); text-decoration:none; }
+    .contact-info-row a:hover { color:var(--navy); }
 
     /* FOOTER */
     .footer-main { background:var(--navy); padding:48px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:36px; }
@@ -171,30 +169,34 @@
     .ft-badges { display:flex; gap:8px; }
     .ft-badge { border:1px solid rgba(255,255,255,0.1); border-radius:4px; padding:3px 9px; font-size:10px; font-weight:700; color:rgba(255,255,255,0.3); letter-spacing:0.04em; }
 
+    /* MOBILE SEARCH */
+    .mobile-search { display:none; }
+
     /* MOBİL */
     @media (max-width: 768px) {
       .topbar { display:none; }
       .main-nav { padding:0 16px; height:56px; }
-      .nav-links { display:none; }
+      .nav-search { display:none; }
       .nav-phone { display:none; }
-      .btn-teklif { display:none; }
       .logo-name { font-size:13px; }
-      .hero { grid-template-columns:1fr; min-height:auto; }
-      .hero-left { padding:32px 20px 24px; }
-      .hero h1 { font-size:30px; }
-      .hero-right { display:none; }
-      .hero-stats { flex-wrap:wrap; }
-      .hstat { flex:0 0 50%; }
-      .mobile-search { display:block; background:var(--navy); padding:0 20px 28px; }
+      .hero { padding:28px 20px 24px; }
+      .hero h1 { font-size:28px; }
+      .hero-search { display:none; }
+      .hero-btns { flex-direction:column; }
+      .btn-hero-main, .btn-hero-sec { justify-content:center; }
+      .hero-stats { flex-wrap:wrap; gap:0; }
+      .hstat { padding:12px 20px 12px 0; margin-right:20px; }
+      .hstat-badge { margin-top:8px; }
+      .mobile-search { display:block; background:var(--navy); padding:0 20px 24px; }
       .section { padding:36px 20px; }
       .section-alt { padding:36px 20px; }
       .cat-grid { grid-template-columns:repeat(2,1fr); }
+      .cat-img, .cat-img-placeholder { height:110px; }
       .how-grid { grid-template-columns:1fr; }
       .trust-strip { grid-template-columns:1fr; padding:32px 20px; }
       .ts-item { padding:20px 0; border-right:none !important; border-bottom:1px solid rgba(255,255,255,0.07); }
       .ts-item:last-child { border-bottom:none; }
-      .contact-inner { grid-template-columns:1fr; gap:24px; }
-      .form-grid { grid-template-columns:1fr; }
+      .contact-simple { grid-template-columns:1fr; }
       .footer-main { grid-template-columns:1fr; gap:28px; padding:36px 20px; }
       .footer-bottom { flex-direction:column; gap:10px; padding:16px 20px; text-align:center; }
       .ft-badges { justify-content:center; }
@@ -211,8 +213,7 @@
       <a href="tel:05462654747"><i class="ti ti-phone"></i> 0546 265 47 47</a>
     </div>
     <div class="topbar-right">
-      <span class="topbar-badge">AYNI GÜN TESLİMAT</span>
-      <a href="#iletisim"><i class="ti ti-truck-delivery"></i> Sipariş Takip</a>
+      <span class="topbar-badge">ADANA İÇİ AYNI GÜN TESLİMAT</span>
       <a href="#iletisim"><i class="ti ti-help"></i> Yardım</a>
     </div>
   </div>
@@ -225,11 +226,24 @@
       </div>
       <div class="logo-name">ÇUKUROVA <span>Otomotiv</span></div>
     </a>
-    <div class="nav-links">
-      <a href="#kategoriler">Kategoriler</a>
-      <a href="#markalar">Markalar</a>
-      <a href="#nasil-calisir">Nasıl Çalışır?</a>
-      <a href="#iletisim">İletişim</a>
+    <div class="nav-search">
+      <div class="nav-search-inner">
+        <select onchange="">
+          <option value="">Tüm Kategoriler</option>
+          <option>Fren Sistemi</option>
+          <option>Elektrik</option>
+          <option>Motor Parçaları</option>
+          <option>Süspansiyon</option>
+          <option>Filtreler</option>
+          <option>Soğutma</option>
+          <option>Debriyaj</option>
+          <option>Yakıt Sistemi</option>
+          <option>Kaporta</option>
+          <option>Direksiyon</option>
+        </select>
+        <input type="text" id="navSearchInput" placeholder="Parça adı veya OEM kodu ile ara…">
+        <button class="nav-search-btn" onclick="doSearch()"><i class="ti ti-search"></i> Ara</button>
+      </div>
     </div>
     <div class="nav-actions">
       <a class="nav-phone" href="tel:05462654747">
@@ -238,73 +252,72 @@
       <a class="btn-wa" href="https://wa.me/905360894407" target="_blank">
         <i class="ti ti-brand-whatsapp"></i> WhatsApp
       </a>
-      <a class="btn-teklif" href="#iletisim">
-        <i class="ti ti-file-text"></i> Teklif Al
-      </a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-glow"></div>
-    <div class="hero-left">
-      <div class="hero-eyebrow">
-        <i class="ti ti-map-pin"></i> Adana &amp; Çukurova Bölgesi
-      </div>
-      <h1>Aracınız İçin<br>Doğru Parça,<br><span class="accent">Hızlı Teslimat.</span></h1>
-      <p class="hero-desc">Yerli ve ithal tüm araç markaları için orijinal ve eşdeğer yedek parça. 15.000+ ürün çeşidi, aynı gün teslimat.</p>
-      <div class="hero-btns">
-        <a class="btn-hero-main" href="#kategoriler"><i class="ti ti-search"></i> Parça Sorgula</a>
-        <a class="btn-hero-sec" href="https://wa.me/905360894407" target="_blank"><i class="ti ti-brand-whatsapp"></i> WhatsApp'tan Sipariş Ver</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hstat"><div class="hstat-n">15.000+</div><div class="hstat-l">Parça Çeşidi</div></div>
-        <div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Aktif Müşteri</div></div>
-        <div class="hstat"><div class="hstat-n">24 Saat</div><div class="hstat-l">Teslimat</div></div>
-        <div class="hstat"><div class="hstat-n">12 Yıl</div><div class="hstat-l">Deneyim</div></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-eyebrow"><i class="ti ti-map-pin"></i> Adana &amp; Çukurova Bölgesi</div>
+    <h1>Aracınız İçin<br>Doğru Parça,<br><span class="accent">Hızlı Teslimat.</span></h1>
+    <p class="hero-desc">Yerli ve ithal tüm araç markaları için orijinal ve eşdeğer yedek parça. 15.000+ ürün çeşidi.</p>
+
+    <!-- HERO SEARCH -->
+    <div class="hero-search">
+      <div class="hero-search-label"><i class="ti ti-search"></i> Araç veya Parça ile Ara</div>
+      <div class="hero-search-fields">
+        <div class="hsf">
+          <label>Araç Markası</label>
+          <select id="heroMarka">
+            <option value="">Tüm Markalar</option>
+            <option>Volkswagen</option><option>Ford</option><option>Renault</option>
+            <option>Toyota</option><option>Fiat</option><option>BMW</option>
+            <option>Mercedes</option><option>Opel</option><option>Peugeot</option>
+            <option>Hyundai</option><option>Kia</option><option>Honda</option>
+            <option>Nissan</option><option>Skoda</option><option>Seat</option>
+          </select>
+        </div>
+        <div class="hsf">
+          <label>Kategori</label>
+          <select id="heroKategori">
+            <option value="">Tüm Kategoriler</option>
+            <option>Fren Sistemi</option><option>Elektrik</option>
+            <option>Motor Parçaları</option><option>Süspansiyon</option>
+            <option>Filtreler</option><option>Soğutma</option>
+            <option>Debriyaj</option><option>Yakıt Sistemi</option>
+            <option>Kaporta</option><option>Direksiyon</option>
+          </select>
+        </div>
+        <div class="hsf">
+          <label>Parça Adı veya OEM Kodu</label>
+          <input type="text" id="heroSearch" placeholder="Ör: Ön balata, 1K0615301…">
+        </div>
+        <div class="hsf">
+          <label>Model / Yıl (isteğe bağlı)</label>
+          <input type="text" id="heroModel" placeholder="Ör: Golf 2019">
+        </div>
+        <button class="btn-hsf" onclick="doHeroSearch()">
+          <i class="ti ti-search"></i> Ara
+        </button>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="vf-label">Araç Seçimi ile Parça Bul</div>
-      <div class="vf-field">
-        <label>Araç Markası</label>
-        <select>
-          <option value="">Marka seçin…</option>
-          <option>Volkswagen</option><option>Ford</option><option>Renault</option>
-          <option>Toyota</option><option>Fiat</option><option>BMW</option>
-          <option>Mercedes</option><option>Opel</option><option>Peugeot</option>
-          <option>Hyundai</option><option>Kia</option><option>Honda</option>
-          <option>Nissan</option><option>Skoda</option><option>Seat</option>
-        </select>
-      </div>
-      <div class="vf-field">
-        <label>Model</label>
-        <select><option value="">Önce marka seçin…</option></select>
-      </div>
-      <div class="vf-field">
-        <label>Yıl</label>
-        <select>
-          <option value="">Yıl seçin…</option>
-          <option>2024</option><option>2023</option><option>2022</option>
-          <option>2021</option><option>2020</option><option>2019</option>
-          <option>2018</option><option>2017</option><option>2016</option>
-          <option>2015</option><option>2014 ve öncesi</option>
-        </select>
-      </div>
-      <div class="vf-field">
-        <label>Parça Adı veya OEM Kodu (isteğe bağlı)</label>
-        <input type="text" placeholder="Ör: Ön balata, 1K0615301…">
-      </div>
-      <button class="btn-vf" onclick="window.location.href='#iletisim'">
-        <i class="ti ti-search"></i> Parça Bul
-      </button>
+
+    <div class="hero-btns">
+      <a class="btn-hero-main" href="#kategoriler"><i class="ti ti-grid"></i> Tüm Kategoriler</a>
+      <a class="btn-hero-sec" href="https://wa.me/905360894407" target="_blank"><i class="ti ti-brand-whatsapp"></i> WhatsApp'tan Sipariş Ver</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-n">15.000+</div><div class="hstat-l">Parça Çeşidi</div></div>
+      <div class="hstat"><div class="hstat-n">500+</div><div class="hstat-l">Aktif Müşteri</div></div>
+      <div class="hstat"><div class="hstat-badge"><i class="ti ti-truck-delivery"></i> Adana İçi Aynı Gün Teslimat</div></div>
     </div>
   </section>
 
-  <!-- MOBİL ARAMA (sadece telefonda görünür) -->
+  <!-- MOBİL ARAMA -->
   <div class="mobile-search">
     <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:16px;">
-      <div style="font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px;">Araç Seçimi ile Parça Bul</div>
+      <div style="font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">Parça Ara</div>
       <select style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:11px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; margin-bottom:10px; appearance:none; -webkit-appearance:none;">
         <option value="">Araç Markası Seçin…</option>
         <option>Volkswagen</option><option>Ford</option><option>Renault</option>
@@ -313,7 +326,7 @@
         <option>Hyundai</option><option>Kia</option><option>Honda</option>
       </select>
       <input type="text" placeholder="Parça adı veya OEM kodu…" style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:11px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; margin-bottom:10px; outline:none;">
-      <button onclick="window.location.href='#iletisim'" style="width:100%; background:var(--gold); color:var(--navy); border:none; border-radius:8px; padding:13px; font-size:14px; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif;">
+      <button onclick="window.location.href='#kategoriler'" style="width:100%; background:var(--gold); color:var(--navy); border:none; border-radius:8px; padding:13px; font-size:14px; font-weight:800; cursor:pointer; font-family:'Inter',sans-serif;">
         <i class="ti ti-search"></i> Parça Bul
       </button>
     </div>
@@ -356,19 +369,189 @@
         <div class="sec-eyebrow">Parça Kategorileri</div>
         <div class="sec-title">Ne Arıyorsunuz?</div>
       </div>
-      <a class="see-all" href="#iletisim">Tümünü Sorgula <i class="ti ti-arrow-right"></i></a>
     </div>
     <div class="cat-grid">
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-circle-half"></i></div><div class="cat-name">Fren Sistemi</div><div class="cat-sub">Balata, disk, kaliper, ABS sensörü</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-bolt"></i></div><div class="cat-name">Elektrik</div><div class="cat-sub">Alternatör, sensör, marş, far</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-settings-2"></i></div><div class="cat-name">Motor Parçaları</div><div class="cat-sub">Piston, silindir, karter, conta</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-circle-dashed"></i></div><div class="cat-name">Süspansiyon</div><div class="cat-sub">Amortisör, rotil, salıncak, rulman</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-wind"></i></div><div class="cat-name">Filtreler</div><div class="cat-sub">Yağ, hava, yakıt, kabin filtresi</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-droplet"></i></div><div class="cat-name">Soğutma</div><div class="cat-sub">Radyatör, termostat, su pompası</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-tools"></i></div><div class="cat-name">Debriyaj</div><div class="cat-sub">Set, baskı, balata, volan</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-flame"></i></div><div class="cat-name">Yakıt Sistemi</div><div class="cat-sub">Enjektör, pompa, EGR valfi</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-components"></i></div><div class="cat-name">Kaporta</div><div class="cat-sub">Tampon, panel, ayna, kapı kolu</div><i class="ti ti-arrow-right cat-arrow"></i></a>
-      <a href="#iletisim" class="cat-card"><div class="cat-icon-wrap"><i class="ti ti-steering-wheel"></i></div><div class="cat-name">Direksiyon</div><div class="cat-sub">Kutu, pompa, mil, rotil</div><i class="ti ti-arrow-right cat-arrow"></i></a>
+
+      <!-- FREN -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-circle-half-2"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Fren Sistemi</div>
+          <ul class="cat-subs">
+            <li>Fren Balatası</li>
+            <li>Fren Diski</li>
+            <li>Fren Kaliperi</li>
+            <li>ABS Sensörü</li>
+            <li>Fren Hidroliği</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Fren%20Sistemi%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- ELEKTRİK -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-bolt"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Elektrik</div>
+          <ul class="cat-subs">
+            <li>Alternatör</li>
+            <li>Marş Motoru</li>
+            <li>Lambda Sensörü</li>
+            <li>Far & Stop</li>
+            <li>Sigorta & Röle</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Elektrik%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- MOTOR -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-settings-2"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Motor Parçaları</div>
+          <ul class="cat-subs">
+            <li>Piston & Segman</li>
+            <li>Silindir Kapak Contası</li>
+            <li>Triger Seti</li>
+            <li>Krank Mili</li>
+            <li>Yağ Pompası</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Motor%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- SÜSPANSİYON -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-circle-dashed"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Süspansiyon</div>
+          <ul class="cat-subs">
+            <li>Amortisör</li>
+            <li>Rotil</li>
+            <li>Salıncak</li>
+            <li>Tekerlek Rulmanı</li>
+            <li>Stabilizatör</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20S%C3%BCspansiyon%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- FİLTRELER -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-filter"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Filtreler</div>
+          <ul class="cat-subs">
+            <li>Yağ Filtresi</li>
+            <li>Hava Filtresi</li>
+            <li>Yakıt Filtresi</li>
+            <li>Polen Filtresi</li>
+            <li>Şanzıman Filtresi</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Filtre%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- SOĞUTMA -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-droplet"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Soğutma Sistemi</div>
+          <ul class="cat-subs">
+            <li>Radyatör</li>
+            <li>Su Pompası</li>
+            <li>Termostat</li>
+            <li>Klima Kompresörü</li>
+            <li>Hava Kompresörü</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20So%C4%9Futma%20Sistemi%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- DEBRİYAJ -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-tools"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Debriyaj</div>
+          <ul class="cat-subs">
+            <li>Debriyaj Seti</li>
+            <li>Baskı Plakası</li>
+            <li>Debriyaj Balatası</li>
+            <li>Volan</li>
+            <li>Debriyaj Bilyası</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Debriyaj%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- YAKIT -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-flame"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Yakıt Sistemi</div>
+          <ul class="cat-subs">
+            <li>Enjektör</li>
+            <li>Yakıt Pompası</li>
+            <li>EGR Valfi</li>
+            <li>Gaz Kelebeği</li>
+            <li>Turbo</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Yak%C4%B1t%20Sistemi%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- KAPORTA -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-components"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Kaporta</div>
+          <ul class="cat-subs">
+            <li>Ön & Arka Tampon</li>
+            <li>Çamurluk</li>
+            <li>Dış Ayna</li>
+            <li>Kapı Kolu</li>
+            <li>Kaput & Bagaj</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Kaporta%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
+      <!-- DİREKSİYON -->
+      <div class="cat-card">
+        <div class="cat-img-placeholder"><i class="ti ti-steering-wheel"></i></div>
+        <div class="cat-body">
+          <div class="cat-name">Direksiyon</div>
+          <ul class="cat-subs">
+            <li>Direksiyon Kutusu</li>
+            <li>Direksiyon Pompası</li>
+            <li>Direksiyon Mili</li>
+            <li>Rotil</li>
+            <li>Kramayer</li>
+          </ul>
+          <a class="cat-wa-btn" href="https://wa.me/905360894407?text=Merhaba%2C%20Direksiyon%20par%C3%A7as%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> Fiyat Al
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -376,22 +559,21 @@
   <section class="section section-alt" id="markalar">
     <p class="brands-label">Desteklenen Araç Markaları</p>
     <div class="brands-grid">
-      <a class="brand-chip active" href="#iletisim">Volkswagen</a>
-      <a class="brand-chip" href="#iletisim">Ford</a>
-      <a class="brand-chip" href="#iletisim">Renault</a>
-      <a class="brand-chip" href="#iletisim">Toyota</a>
-      <a class="brand-chip" href="#iletisim">Fiat</a>
-      <a class="brand-chip" href="#iletisim">BMW</a>
-      <a class="brand-chip" href="#iletisim">Mercedes</a>
-      <a class="brand-chip" href="#iletisim">Opel</a>
-      <a class="brand-chip" href="#iletisim">Peugeot</a>
-      <a class="brand-chip" href="#iletisim">Hyundai</a>
-      <a class="brand-chip" href="#iletisim">Kia</a>
-      <a class="brand-chip" href="#iletisim">Honda</a>
-      <a class="brand-chip" href="#iletisim">Nissan</a>
-      <a class="brand-chip" href="#iletisim">Skoda</a>
-      <a class="brand-chip" href="#iletisim">Seat</a>
-      <a class="brand-chip" href="#iletisim">Tüm Markalar →</a>
+      <a class="brand-chip active" href="https://wa.me/905360894407?text=Volkswagen%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Volkswagen</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Ford%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Ford</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Renault%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Renault</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Toyota%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Toyota</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Fiat%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Fiat</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=BMW%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">BMW</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Mercedes%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Mercedes</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Opel%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Opel</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Peugeot%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Peugeot</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Hyundai%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Hyundai</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Kia%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Kia</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Honda%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Honda</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Nissan%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Nissan</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Skoda%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Skoda</a>
+      <a class="brand-chip" href="https://wa.me/905360894407?text=Seat%20i%C3%A7in%20par%C3%A7a%20sorgulamak%20istiyorum." target="_blank">Seat</a>
     </div>
   </section>
 
@@ -401,7 +583,7 @@
     <div class="sec-title">4 Adımda Parçanız Kapınızda</div>
     <div class="how-grid">
       <div class="how-step"><div class="how-num">01</div><div class="how-icon"><i class="ti ti-search"></i></div><div class="how-title">Parça veya Araç Seçin</div><p class="how-text">Marka-model seçin ya da OEM koduyla doğrudan arayın.</p></div>
-      <div class="how-step"><div class="how-num">02</div><div class="how-icon"><i class="ti ti-file-text"></i></div><div class="how-title">Teklif Alın</div><p class="how-text">Formu doldurun veya WhatsApp'tan yazın. 15 dakikada dönüş yaparız.</p></div>
+      <div class="how-step"><div class="how-num">02</div><div class="how-icon"><i class="ti ti-brand-whatsapp"></i></div><div class="how-title">WhatsApp'tan Yazın</div><p class="how-text">Kategori butonuna tıklayın, WhatsApp açılır. 15 dakikada fiyat dönüşü yaparız.</p></div>
       <div class="how-step"><div class="how-num">03</div><div class="how-icon"><i class="ti ti-check"></i></div><div class="how-title">Onaylayın</div><p class="how-text">Fiyat ve stok bilgisini onayladıktan sonra siparişinizi oluşturun.</p></div>
       <div class="how-step"><div class="how-num">04</div><div class="how-icon"><i class="ti ti-truck-delivery"></i></div><div class="how-title">Teslim Alın</div><p class="how-text">Adana içi aynı gün, çevre illere ertesi gün kargo ile kapınızda.</p></div>
     </div>
@@ -414,36 +596,32 @@
     <div class="ts-item"><div class="ts-icon"><i class="ti ti-headset"></i></div><div class="ts-title">Uzman Teknik Destek</div><p class="ts-text">Hangi parça olduğundan emin değilseniz, teknik ekibimiz yönlendirir.</p></div>
   </div>
 
-  <!-- İLETİŞİM & FORM -->
+  <!-- İLETİŞİM -->
   <section class="section section-alt" id="iletisim">
-    <div class="contact-inner">
-      <div class="contact-left">
-        <div class="sec-eyebrow">İletişim &amp; Teklif</div>
-        <h2>Hızlı Teklif<br>Almak Çok Kolay</h2>
-        <p>Formu doldurun, teknik ekibimiz en kısa sürede size ulaşsın. Ortalama yanıt süresi 15 dakikadır.</p>
-        <div class="info-rows">
-          <div class="info-row"><div class="info-icon"><i class="ti ti-phone"></i></div><div><span class="info-label">Telefon</span><span class="info-val">0546 265 47 47</span></div></div>
-          <div class="info-row"><div class="info-icon"><i class="ti ti-brand-whatsapp"></i></div><div><span class="info-label">WhatsApp</span><span class="info-val">0536 089 44 07</span></div></div>
-          <div class="info-row"><div class="info-icon"><i class="ti ti-mail"></i></div><div><span class="info-label">E-posta</span><span class="info-val">info@cukurovaotomotiv.com.tr</span></div></div>
-          <div class="info-row"><div class="info-icon"><i class="ti ti-clock"></i></div><div><span class="info-label">Çalışma Saatleri</span><span class="info-val">Hafta içi 08:00 – 18:00</span></div></div>
-          <div class="info-row"><div class="info-icon"><i class="ti ti-map-pin"></i></div><a href="https://maps.app.goo.gl/81iPa6Aaub5f9cNu9" target="_blank" class="info-val" style="color:var(--g900); text-decoration:none;">Onur, 45001. Sk. no:37 D:1A, 01010 Seyhan/Adana ↗</a></div>
-        </div>
+    <div class="sec-eyebrow">İletişim</div>
+    <div class="sec-title">Bize Ulaşın</div>
+    <div class="contact-simple">
+      <div class="contact-card">
+        <div class="contact-card-icon"><i class="ti ti-phone"></i></div>
+        <div class="contact-card-title">Telefon</div>
+        <a class="contact-card-val" href="tel:05462654747">0546 265 47 47</a>
+        <a class="contact-card-btn" href="tel:05462654747"><i class="ti ti-phone"></i> Hemen Ara</a>
       </div>
-      <div class="form-box">
-        <h3>Hızlı Parça Teklif Formu</h3>
-        <p class="form-desc">Ortalama yanıt süresi: 15 dakika</p>
-        <div class="form-grid">
-          <div class="fg"><label>Adınız Soyadınız</label><input type="text" placeholder="Ad Soyad"></div>
-          <div class="fg"><label>Telefon Numaranız</label><input type="tel" placeholder="05xx xxx xx xx"></div>
-          <div class="fg"><label>Araç Markası</label><select><option value="">Seçin…</option><option>Volkswagen</option><option>Ford</option><option>Renault</option><option>Toyota</option><option>Fiat</option><option>BMW</option><option>Mercedes</option><option>Opel</option><option>Diğer</option></select></div>
-          <div class="fg"><label>Araç Modeli &amp; Yılı</label><input type="text" placeholder="Ör: Golf 2019"></div>
-          <div class="fg full"><label>Aranan Parça / OEM Kodu</label><input type="text" placeholder="Parça adı veya OEM kodu"></div>
-          <div class="fg full"><label>Ek Notunuz</label><textarea rows="3" placeholder="Varsa ek bilgi, detay veya özel isteğinizi yazın…"></textarea></div>
+      <div class="contact-card">
+        <div class="contact-card-icon" style="background:rgba(37,211,102,0.1);"><i class="ti ti-brand-whatsapp" style="color:#25D366;"></i></div>
+        <div class="contact-card-title">WhatsApp</div>
+        <a class="contact-card-val" href="https://wa.me/905360894407" target="_blank">0536 089 44 07</a>
+        <a class="contact-card-btn wa" href="https://wa.me/905360894407" target="_blank"><i class="ti ti-brand-whatsapp"></i> WhatsApp'tan Yaz</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon"><i class="ti ti-info-circle"></i></div>
+        <div class="contact-card-title">Bilgi</div>
+        <div style="margin-bottom:14px;">
+          <div class="contact-info-row"><i class="ti ti-mail"></i><a href="mailto:info@cukurovaotomotiv.com.tr">info@cukurovaotomotiv.com.tr</a></div>
+          <div class="contact-info-row"><i class="ti ti-clock"></i><span>Hafta içi 08:00 – 18:00</span></div>
+          <div class="contact-info-row"><i class="ti ti-map-pin"></i><a href="https://maps.app.goo.gl/81iPa6Aaub5f9cNu9" target="_blank">Onur, 45001. Sk. no:37 D:1A Seyhan/Adana ↗</a></div>
         </div>
-        <div class="form-btns">
-          <button class="fbtn-main"><i class="ti ti-send"></i> Teklif Gönder</button>
-          <a class="fbtn-wa" href="https://wa.me/905360894407" target="_blank"><i class="ti ti-brand-whatsapp"></i> WA</a>
-        </div>
+        <a class="contact-card-btn" href="https://maps.app.goo.gl/81iPa6Aaub5f9cNu9" target="_blank"><i class="ti ti-map-pin"></i> Haritada Gör</a>
       </div>
     </div>
   </section>
@@ -453,24 +631,51 @@
     <div class="footer-main">
       <div>
         <div class="ft-brand">ÇUKUROVA OTOMOTİV</div>
-        <p class="ft-desc">Adana'nın güvenilir yedek parça tedarikçisi. Orijinal ve eşdeğer parçada 12 yıllık deneyim.</p>
+        <p class="ft-desc">Adana'nın güvenilir yedek parça tedarikçisi. Orijinal ve eşdeğer parçada uzun yıllık deneyim.</p>
         <a class="ft-contact-row" href="tel:05462654747"><i class="ti ti-phone"></i> 0546 265 47 47</a>
         <a class="ft-contact-row" href="mailto:info@cukurovaotomotiv.com.tr"><i class="ti ti-mail"></i> info@cukurovaotomotiv.com.tr</a>
         <a class="ft-contact-row" href="https://maps.app.goo.gl/81iPa6Aaub5f9cNu9" target="_blank"><i class="ti ti-map-pin"></i> Onur, 45001. Sk. no:37 D:1A Seyhan/Adana ↗</a>
       </div>
       <div class="ft-col"><h4>Kategoriler</h4><a href="#kategoriler">Fren Sistemi</a><a href="#kategoriler">Elektrik</a><a href="#kategoriler">Motor Parçaları</a><a href="#kategoriler">Süspansiyon</a><a href="#kategoriler">Filtreler</a><a href="#kategoriler">Debriyaj</a></div>
       <div class="ft-col"><h4>Araç Markaları</h4><a href="#markalar">Volkswagen</a><a href="#markalar">Ford</a><a href="#markalar">Renault</a><a href="#markalar">Toyota</a><a href="#markalar">BMW</a><a href="#markalar">Tüm Markalar</a></div>
-      <div class="ft-col"><h4>Kurumsal</h4><a href="#nasil-calisir">Nasıl Çalışır?</a><a href="#iletisim">İletişim</a><a href="#iletisim">Teklif Al</a><a href="#">KVKK</a></div>
+      <div class="ft-col"><h4>Kurumsal</h4><a href="#nasil-calisir">Nasıl Çalışır?</a><a href="#iletisim">İletişim</a><a href="https://wa.me/905360894407" target="_blank">WhatsApp Sipariş</a><a href="#">KVKK</a></div>
     </div>
     <div class="footer-bottom">
       <span class="ft-copy">© 2025 Çukurova Otomotiv. Tüm hakları saklıdır.</span>
       <div class="ft-badges">
         <span class="ft-badge">SSL GÜVENLİ</span>
         <span class="ft-badge">OEM SERTİFİKALI</span>
-        <span class="ft-badge">12 YIL DENEYİM</span>
+        <span class="ft-badge">ADANA İÇİ AYNI GÜN</span>
       </div>
     </div>
   </footer>
+
+  <script>
+    function doSearch() {
+      var input = document.getElementById('navSearchInput').value.trim();
+      if (!input) return;
+      var msg = 'Merhaba, şu parçayı sorgulamak istiyorum: ' + input;
+      window.open('https://wa.me/905360894407?text=' + encodeURIComponent(msg), '_blank');
+    }
+    function doHeroSearch() {
+      var marka = document.getElementById('heroMarka').value;
+      var kat = document.getElementById('heroKategori').value;
+      var parca = document.getElementById('heroSearch').value;
+      var model = document.getElementById('heroModel').value;
+      var msg = 'Merhaba, parça sorgusu yapmak istiyorum.\n';
+      if (marka) msg += 'Araç Markası: ' + marka + '\n';
+      if (model) msg += 'Model/Yıl: ' + model + '\n';
+      if (kat) msg += 'Kategori: ' + kat + '\n';
+      if (parca) msg += 'Parça: ' + parca + '\n';
+      window.open('https://wa.me/905360894407?text=' + encodeURIComponent(msg), '_blank');
+    }
+    document.getElementById('navSearchInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doSearch();
+    });
+    document.getElementById('heroSearch').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doHeroSearch();
+    });
+  </script>
 
 </body>
 </html>
