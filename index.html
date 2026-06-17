@@ -418,7 +418,7 @@
       border: 1px solid rgba(255,255,255,0.1); border-radius: 4px;
       padding: 3px 9px; font-size: 10px; font-weight: 700;
       color: rgba(255,255,255,0.3); letter-spacing: 0.04em;
-    }
+    .mobile-search { display: none; }
     @media (max-width: 768px) {
   .topbar { display: none; }
   .main-nav { padding: 0 16px; height: 56px; }
@@ -442,8 +442,8 @@
   .footer-main { grid-template-columns: 1fr; gap: 28px; padding: 36px 20px; }
   .footer-bottom { flex-direction: column; gap: 10px; padding: 16px 20px; text-align: center; }
   .ft-badges { justify-content: center; }
-  .btn-teklif { display: none; }
-  .mobile-search { display: block; }    
+  .btn-teklif { display: none; }    
+  .mobile-search { display: block; }
 }
   </style>
 </head>
@@ -549,7 +549,7 @@
       </button>
     </div>
   </section>
-  <div class="mobile-search" style="display:none; background:var(--navy); padding:0 20px 28px;">
+  <div class="mobile-search" style="background:var(--navy); padding:0 20px 28px;">
   <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:16px;">
     <div style="font-size:11px; font-weight:700; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px;">Araç Seçimi ile Parça Bul</div>
     <select style="width:100%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); border-radius:7px; padding:11px 13px; font-size:13px; color:var(--white); font-family:'Inter',sans-serif; margin-bottom:10px; appearance:none;">
